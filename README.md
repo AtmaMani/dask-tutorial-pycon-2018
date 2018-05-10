@@ -1,3 +1,28 @@
+# Atma's notes
+## Dask delayed
+ - use the load_solutions snippet in talks to hide code cells
+ - all derivatives on a `delayed` object are also delayed!!
+ - call `.visualize()` off a `delayed` object to see its graph.
+ - dask loads data only when needed and you can work on arrays that are larger than memory
+
+## Dask arrays
+ - building on `delayed()` is `dask.array`, which can be used on numpy arrays.
+
+## Dask series and dataframes
+ - mirror Pandas series and dataframes. Most functions on pd dataframes are available in dask dataframes
+ - derivatives of dask dataframe are also delayed
+
+## Implementation
+ - dask uses threaded arrays instead of processes, because multiple libs are now good with releasing GIL
+
+## Distributed Dask
+ - so far, all of Dask delayed evals were happening on the same machine
+ - however, dask can work on distributed clusters as well (PySpark??) People have run this on 1000-10,000 cores.
+ 
+Scott M's original talk about derivatives and delayed evals are similar to what Dask is about.
+
+https://www.surveymonkey.com/r/M8QRPJ9
+
 # Parallel Data Analysis with Dask
 
 Materials for the [Dask tutorial at PyCon 2018](https://us.pycon.org/2018/schedule/presentation/47/).
